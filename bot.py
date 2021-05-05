@@ -23,8 +23,8 @@ if __name__ == "__main__":
                 # grab user's voice channel
                 # create StreamPlayer
                 voice = await channel.connect()
-                source = FFmpegPCMAudio(executable="./ffmpeg.exe", source='./campana.mp3')
+                source = FFmpegPCMAudio(source='./campana.mp3')
                 player = voice.play(source)
                 time.sleep(5)
-                voice.disconnect()
+                await voice.disconnect()
     client.run(token)
